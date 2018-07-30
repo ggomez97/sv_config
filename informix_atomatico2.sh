@@ -1,3 +1,6 @@
+#!/bin/bash
+    clear
+
 sudo touch /opt/informix/etc/sqlhosts
 sudo chown informix.informix /opt/informix/etc/sqlhosts
 su informix -c "cat sqlhosts.txt > /opt/informix/etc/sqlhosts"
