@@ -1,19 +1,15 @@
 #!/bin/bash
-
-su -
-
+    clear
 hostnamectl set-hostname servidor.its 
 
-cat /sv_config/network_config.txt > /etc/sysconfig/network-scripts/ifcfg-enp0s3
+cat network_config.txt > /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 systemctl stop NetworkManager
 systemctl disable NetworkManager
-systemctl restar network.service
-ip add show
+systemctl restart network.service
 
+cat /etc/sysconfig/network-scripts/ifcfg-enp0s3 
 
-
-
-
+hostnamectl 
 
 
