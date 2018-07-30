@@ -1,0 +1,6 @@
+SQLHOSTS=/opt/informix/etc/sqlhosts
+INFORMIXDIR=/opt/informix
+INFORMIXSERVER=miServidor
+ONCONFIG=onconfig.std
+PATH=$INFORMIX/bin:$PATH:/opt/informix/bin
+export INFORMIXDIR PATH INFORMIXSERVER ONCONFIG SQLHOSTS
