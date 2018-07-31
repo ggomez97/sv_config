@@ -492,7 +492,7 @@ HETERO_COMMIT 0
 #                positive integral multiple of TAPEBLK.
 ###################################################################
 
-TAPEDEV /dev/tapedev
+TAPEDEV /opt/informix/backup
 TAPEBLK 32
 TAPESIZE 0
 
