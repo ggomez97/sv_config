@@ -1,2 +1,2 @@
 #dbservername    nettype       hostname      servicename      options
-miServidor       onsoctcp      (localhost  or ip)    informix 
+miServidor       onsoctcp      192.168.10.141   informix 
