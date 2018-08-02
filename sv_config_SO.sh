@@ -1,5 +1,6 @@
 #!/bin/bash
     clear
+
 hostnamectl set-hostname servidor.its 
 
 cd /etc/sysconfig/network-scripts
@@ -10,22 +11,20 @@ echo 'GATEWAY="192.168.10.1"' >> ifcfg-enp0s3
 echo 'IPV6_PRIVACY="no"' >> ifcfg-enp0s3
 echo 'ZONE=public"' >> ifcfg-enp0s3
 
-sed -E 's(BOOTPROTO=")([a-zA-Z*])(")/\1none3/g' ifcfg-enp0s3
+sed -E -i 's/(BOOTPROTO=")([a-zA-Z]*)(")\1/none\3/g' ifcfg-enp0s3
 
 systemctl stop NetworkManager
 systemctl disable NetworkManager
 systemctl restart network.service
 
-cat /etc/sysconfig/network-scripts/ifcfg-enp0s3 
-
 hostnamectl 
 
-read -n1
+#read -n1
 
-sudo groupadd informix                                    # Crear un grupo llamado informix
-sudo useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
-sudo passwd informix                                      # Asigna una contraseña del usuario informix
+#udo groupadd informix                                    # Crear un grupo llamado informix
+#sudo useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
+#sudo passwd informix                                      # Asigna una contraseña del usuario informix
 
 
-read -n1
+#read -n1
 
