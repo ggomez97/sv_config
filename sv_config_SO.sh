@@ -21,7 +21,7 @@ hostnamectl
 
 #read -n1
 
-#udo groupadd informix                                    # Crear un grupo llamado informix
+#sudo groupadd informix                                    # Crear un grupo llamado informix
 #sudo useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
 #sudo passwd informix                                      # Asigna una contraseña del usuario informix
 
