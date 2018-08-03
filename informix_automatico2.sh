@@ -15,7 +15,6 @@ su informix -c "chmod 660 /opt/informix/logdir/rootdbs"   # Modificamos los perm
 chown informix.informix /opt/informix/logdir/rootdbs # Modificamos el propietario al dbspace root
 
 cat services.txt > /etc/service 
-cat /etc/service 
 
 read -n1
 

@@ -5,8 +5,6 @@ mkdir /opt/informix                                  # Crear el directorio de in
 chown informix.informix /opt/informix                # Le damos la propiedad a informix 
 cat config_informix.txt > /etc/profile.d/informix.sh 
 
-cat /etc/profile.d/informix.sh 
-
 read -n1
 
 mv informix_comprimido.rar /opt/informix

@@ -30,8 +30,8 @@ passwd informix                                      # Asigna una contraseña de
 
 #groupadd docente
 
-#groupadd gestion
+#groupadd gestion 
 
-#groupadd administrador
+#groupadd administrador 
 
 
