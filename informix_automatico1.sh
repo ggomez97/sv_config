@@ -1,13 +1,13 @@
 #!/bin/bash
     clear 
 
-mkdir /opt/informix                                  # Crear el directorio de informix
-chown informix.informix /opt/informix                # Le damos la propiedad a informix 
-cat config_informix.txt > /etc/profile.d/informix.sh 
+sudo mkdir /opt/informix                                  # Crear el directorio de informix
+sudo chown informix.informix /opt/informix                # Le damos la propiedad a informix 
+sudo cat config_informix.txt > /etc/profile.d/informix.sh 
 
 read -n1
 
-mv informix_comprimido.rar /opt/informix
+sudo mv informix_comprimido.rar /opt/informix
 cd /opt/informix
 su informix -c "tar -xvf informix_comprimido.tar"
 ./ids_install

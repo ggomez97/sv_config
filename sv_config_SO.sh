@@ -1,28 +1,29 @@
 #!/bin/bash
-    clear
-hostnamectl set-hostname servidor.its 
+    clear                                   #Este comando limpia la pantalla
+hostnamectl set-hostname servidor.its       #Cambia el nombre del servidor
 
-cd /etc/sysconfig/network-scripts
+cd /etc/sysconfig/network-scripts           #Se mueve entre directorios
 
-echo 'IPADDR="192.168.10.141"' >> ifcfg-enp0s3
-echo 'PREFIX="24"' >> ifcfg-enp0s3
-echo 'GATEWAY="192.168.10.1"' >> ifcfg-enp0s3
-echo 'IPV6_PRIVACY="no"' >> ifcfg-enp0s3
-echo 'ZONE="public"' >> ifcfg-enp0s3
-sed -E -i 's/(BOOTPROTO=)([a-zA-Z]*)/\1none/g' ifcfg-enp0s3
+sudo echo 'IPADDR="192.168.10.141"' >> ifcfg-enp0s3 
+sudo echo 'PREFIX="24"' >> ifcfg-enp0s3
+sudo echo 'GATEWAY="192.168.10.1"' >> ifcfg-enp0s3
+sudo echo 'IPV6_PRIVACY="no"' >> ifcfg-enp0s3
+sudo echo 'ZONE="public"' >> ifcfg-enp0s3
+sudo sed -E -i 's/(BOOTPROTO=)([a-zA-Z]*)/\1none/g' ifcfg-enp0s3
+#Todos estos comandos agregan o cambian valores en el archivo ifcfg-enp0s3
 
-systemctl stop NetworkManager
-systemctl disable NetworkManager
-systemctl restart network.service
+systemctl stop NetworkManager #Detiene el servicio NetworkManager
+systemctl disable NetworkManager #Deshabilita el servicio NetworkManager
+systemctl restart network.service #Reinicia el servicio NetworkManager
 
-hostnamectl 
+hostnamectl  #Nos muestra que de verdad se hallan realizado los cambios
 
 
 read -n1
 
-groupadd informix                                    # Crear un grupo llamado informix
-useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
-passwd informix                                      # Asigna una contraseña del usuario informix
+sudo groupadd informix                                    # Crear un grupo llamado informix
+sudo useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
+sudo passwd informix                                      # Asigna una contraseña del usuario informix
 
 
 
