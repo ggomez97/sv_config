@@ -7,7 +7,7 @@ cat config_informix.txt > /etc/profile.d/informix.sh
 
 read -n1
 
-mv informix_comprimido.rar /opt/informix
+mv informix_comprimido.tar /opt/informix
 cd /opt/informix
 su informix -c "tar -xvf informix_comprimido.tar"
 ./ids_install
