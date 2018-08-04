@@ -46,5 +46,5 @@ systemctl start clamd@scan
 systemctl enable clamd@scan
 systemctl status clamd@scan
 
-#Agregar crontab para   clamscan --infected --recursive ~
+#Agregar crontab para   clamscan --infected --recursive /
 
