@@ -27,12 +27,34 @@ sudo passwd informix                                      # Asigna una contrase√
 
 
 
-#groupadd invitado
+sudo groupadd docente
+sudo useradd -g docente -d /dev/null gabriel.gomez
+sudo useradd -g docente -d /dev/null ricardo.perez
+sudo useradd -g docente -d /dev/null franco.delgado
+sudo useradd -g docente -d /dev/null fernando.mendaro
+sudo useradd -g docente -d /dev/null agusto.favaro
+sudo useradd -g docente -d /dev/null valentin.perez
+sudo useradd -g docente -d /dev/null lem.fontes
+sudo useradd -g docente -d /dev/null joaquin.nuniez
+sudo useradd -g docente -d /dev/null victoria.butzke
+sudo useradd -g docente -d /dev/null agustin.zibechi
+sudo useradd -g docente -d /dev/null camilo.castaguena
+sudo useradd -g docente -d /dev/null camilo.maqueira
+sudo useradd -g docente -d /dev/null diego.pazos
+sudo useradd -g docente -d /dev/null gissel.Arregui
+sudo useradd -g docente -d /dev/null joaquin.pintos
+sudo useradd -g docente -d /dev/null gabriel.duran
+sudo useradd -g docente -d /dev/null daniel.cherro
+sudo useradd -g docente -d /dev/null cecilia.galllo
+sudo useradd -g docente -d /dev/null christian.baptista
+sudo useradd -g docente -d /dev/null eloisa.benech
+sudo useradd -g docente -d /dev/null ivan.marenco
 
-#groupadd docente
+sudo groupadd gestion 
 
-#groupadd gestion 
-
-#groupadd administrador 
-
-
+sudo groupadd administrador 
+sudo usseradd -g administrador -d /home/admin.server adminserver
+sudo passwd adminserver 
+sudo usermod -aG wheel adminserver
+sudo chown -R adminserver /home/adminserver
+sudo chmod 770 /home/adminserver 
