@@ -22,14 +22,16 @@ hostnamectl  #Nos muestra que de verdad se hallan realizado los cambios
 read -n1
 
 sudo groupadd informix                                    # Crear un grupo llamado informix
-sudo useradd -g informix -d /home/informix informix            # Crear usuario informix y lo agrega al grupo informix
+sudo useradd -g informix -d /opt/informix informix            # Crear usuario informix y lo agrega al grupo informix
 sudo passwd informix                                      # Asigna una contraseña del usuario informix
 
 
 
 sudo groupadd docente
 sudo useradd -g docente -d /dev/null gabriel.gomez
+sudo passwd gabriel.gomez 
 sudo useradd -g docente -d /dev/null ricardo.perez
+sudo passwd
 sudo useradd -g docente -d /dev/null franco.delgado
 sudo useradd -g docente -d /dev/null fernando.mendaro
 sudo useradd -g docente -d /dev/null agusto.favaro
@@ -50,6 +52,9 @@ sudo useradd -g docente -d /dev/null christian.baptista
 sudo useradd -g docente -d /dev/null eloisa.benech
 sudo useradd -g docente -d /dev/null ivan.marenco
 
+grupo_docente=`cat /etc/group | grep docente | cut -d ':' -f '3'`
+cat /etc/passwd | grep $grupo_docente | 
+
 sudo groupadd gestion 
 
 sudo groupadd administrador 
@@ -58,3 +63,4 @@ sudo passwd adminserver
 sudo usermod -aG wheel adminserver
 sudo chown -R adminserver /home/adminserver
 sudo chmod 770 /home/adminserver 
+sudo useradd -g admin 
