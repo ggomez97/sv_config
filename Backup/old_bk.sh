@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-    FECHA=`date +%Y-%m-%d -d "-8 days"`
+    FECHA=`date +%Y-%m-%d -d "-14 days"`
 read -n1
     cd /home/gservidor/log_bk
 
