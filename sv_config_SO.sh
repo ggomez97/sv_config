@@ -18,6 +18,12 @@ systemctl restart network.service #Reinicia el servicio NetworkManager
 
 hostnamectl  #Nos muestra que de verdad se hallan realizado los cambios
 
+sudo echo '30 00 * * * sh /home/gservidor/scripts/backup.sh' >> /etc/crontab
+sudo echo '00 02 * * * sh /home/gservidor/scripts/old_bk.sh' >> /etc/crontab
+sudo echo '59 00,13 * * 2,3,4,5,6,7 informix ontape -s -L 1&' >> /etc/crontab
+sudo echo '00 00 * * 1 informix ontape-s -L 0 &' >> /etc/crontab
+sudo echo '00 00,12 * * * root clamscan --infected --recursive /' >> /etc/crontab
+
 
 read -n1
 
@@ -26,41 +32,61 @@ sudo useradd -g informix -d /opt/informix informix            # Crear usuario in
 sudo passwd informix                                      # Asigna una contraseña del usuario informix
 
 
+sudo group add invitados
+sudo usseradd -g invitados /dev/null usuario.invitados
+sudo passwd #La contraseña sera 1234
 
 sudo groupadd docente
 sudo useradd -g docente -d /dev/null gabriel.gomez
 sudo passwd gabriel.gomez 
 sudo useradd -g docente -d /dev/null ricardo.perez
-sudo passwd
+sudo passwd ricardo.perez
 sudo useradd -g docente -d /dev/null franco.delgado
+sudo passwd franco.delgado
 sudo useradd -g docente -d /dev/null fernando.mendaro
+sudo passwd fernando.mendaro
 sudo useradd -g docente -d /dev/null agusto.favaro
+sudo passwd agusto.favaro
 sudo useradd -g docente -d /dev/null valentin.perez
+sudo passwd valentin.perez
 sudo useradd -g docente -d /dev/null lem.fontes
+sudo passwd lem.fontes
 sudo useradd -g docente -d /dev/null joaquin.nuniez
+sudo passwd joaquin.nuniez
 sudo useradd -g docente -d /dev/null victoria.butzke
+sudo passwd victoria.butzke
 sudo useradd -g docente -d /dev/null agustin.zibechi
+sudo passwd agustin.zibechi
 sudo useradd -g docente -d /dev/null camilo.castaguena
+sudo passwd camilo.castaguena
 sudo useradd -g docente -d /dev/null camilo.maqueira
+sudo passwd camilo.maqueira
 sudo useradd -g docente -d /dev/null diego.pazos
-sudo useradd -g docente -d /dev/null gissel.Arregui
+sudo passwd diego.pazos
+sudo useradd -g docente -d /dev/null gissel.arregui
+sudo passwd gissel.arregui
 sudo useradd -g docente -d /dev/null joaquin.pintos
+sudo passwd joaquin.pintos
 sudo useradd -g docente -d /dev/null gabriel.duran
+sudo passwd gabriel.duran
 sudo useradd -g docente -d /dev/null daniel.cherro
+sudo passwd daniel.cherro
 sudo useradd -g docente -d /dev/null cecilia.galllo
+sudo passwd cecilia.galllo
 sudo useradd -g docente -d /dev/null christian.baptista
+sudo passwd christian.baptista
 sudo useradd -g docente -d /dev/null eloisa.benech
+sudo passwd eloisa.benech
 sudo useradd -g docente -d /dev/null ivan.marenco
+sudo passwd ivan.marenco
 
-grupo_docente=`cat /etc/group | grep docente | cut -d ':' -f '3'`
-cat /etc/passwd | grep $grupo_docente | 
 
 sudo groupadd gestion 
+
 
 sudo groupadd administrador 
 sudo usseradd -g administrador -d /home/admin.server adminserver
 sudo passwd adminserver 
 sudo usermod -aG wheel adminserver
-sudo chown -R adminserver /home/adminserver
-sudo chmod 770 /home/adminserver 
-sudo useradd -g admin 
+sudo chown -R adminserver /home/admin.server
+sudo chmod 770 /home/admin.server 
