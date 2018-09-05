@@ -19,7 +19,7 @@ hostnamectl  #Nos muestra que de verdad se hallan realizado los cambios
 
 sudo echo '30 00 * * * sh /home/gservidor/scripts/backup.sh' >> /etc/crontab
 sudo echo '00 02 * * * sh /home/gservidor/scripts/old_bk.sh' >> /etc/crontab
-sudo echo '59 00,13 * * 2,3,4,5,6,7 informix ontape -s -L 1&' >> /etc/crontab
+sudo echo '59 00,13 * * 2,3,4,5,6,7 informix ontape -s -L 1 &' >> /etc/crontab
 sudo echo '00 00 * * 1 informix ontape-s -L 0 &' >> /etc/crontab
 sudo echo '00 00,12 * * * root clamscan --infected --recursive /' >> /etc/crontab
 read -n1
