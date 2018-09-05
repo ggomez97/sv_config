@@ -10,4 +10,3 @@ echo "Borrando el archivo que se encuentra en /home/gservidor/log_bk/backup$FECH
 	read -n1
 	rm -rf /home/gservidor/log_bk/backup$FECHA.tar
 fi
-cd $HOME
