@@ -1,10 +1,17 @@
 #!/bin/bash
+
+RED=$(tput setaf 1)
+VERDE=$(tput setaf 2)
+NORMAL=$(tput setaf 0)
+AZULITO=$(tput setaf 6)
+
 clear
+
 while [ "$menu_backup" != 0 ]
 do
 echo
 echo "##############################################"
-echo "# Menu de administracion de la Base de Datos #"
+echo "# ${RED}Menu de administracion de la Base de Datos${NORMAL}#"
 echo "##############################################"
 echo "
  1) Ingresar en la base de datos
@@ -29,3 +36,4 @@ case $menu_backup in
         HMG_main_menu.sh;;
 esac
 done
+
