@@ -18,10 +18,9 @@ echo "
  2) Realizar Backup.
  3) Realizar recuperacion de Datos.
  4) Ver recursos de la Base de datos.
- 0) Volver."
+ 0) Volver atras."
 echo
-echo -n " Seleccione la opcion deseada: " 
-read op
+read -p " Seleccione la opcion deseada: "   menu_backup
 case $menu_backup in
     1) clear
         dbaccess bits_64;;
@@ -33,7 +32,7 @@ case $menu_backup in
         echo "Recursos del motor de la Base de datos"
         onstat -d;;
     0) clear 
-        HMG_main_menu.sh;;
+        bash HMG_main_menu.sh;;
 esac
 done
 

@@ -35,21 +35,21 @@ do
    
  0) Salir."
 echo
-read Menu
+read -p "Inserte numero" Menu
 
 case "$Menu" in 
 
     1) clear
-        menu_admin_ususarios_grupos.sh;;
+       bash menu_admin_ususarios_grupos.sh;;
 
     2) clear
-        menu_backup.sh;;
+       bash menu_backup.sh;;
     3) clear
-        menu_rendimiento_sv.sh;;
+       bash menu_rendimiento_sv.sh;;
     4) clear
-        menu_logs.sh;;
+       bash menu_logs.sh;;
     5) clear
-        menu_red.sh;;
+        bash menu_red.sh;;
 esac
 done
 
