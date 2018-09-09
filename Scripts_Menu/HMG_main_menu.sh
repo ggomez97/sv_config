@@ -35,7 +35,7 @@ do
    
  0) Salir."
 echo
-read -p "Inserte numero" Menu
+read -p "Inserte numero: " Menu
 
 case "$Menu" in 
 

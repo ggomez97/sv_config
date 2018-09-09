@@ -10,9 +10,9 @@ fi
 
  read -n1
 
-rm -rf /home/ggomez/log_bk-/backup$fecha
+rm -rf /home/$usuario/log_bk-/backup$fecha
 echo "Se esta haciendo el nuevo backup para el dia $fecha"
-mkdir /home/ggomez/log_bk/backup$fecha
+mkdir /home/$usuario/log_bk/backup$fecha
 mkdir /home/$usuario/log_bk/backup$fecha/db /home/$usuario/log_bk/backup$fecha/sistema
 
 dbexport proyecto_x -o /home/$usuario/log_bk/backup$fecha/db -ss 
