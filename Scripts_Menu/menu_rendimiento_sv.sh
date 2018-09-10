@@ -20,7 +20,7 @@ case $menu_rendimiento in
 
 1)clear
     echo "La configuracion de red:";
-        ifconfig;;
+        ifconfig | less ;;
 
 2)clear
  echo "El uso de disco:";

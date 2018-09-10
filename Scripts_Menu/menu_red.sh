@@ -18,7 +18,7 @@ case $menu_red in
 
 1)echo 
 read -p " Ingrese la IP de host que desea testear: " ping
-ping $ping;;
+ping -c 6 $ping;;
 
 2) clear 
 netstat | grep EST;;
