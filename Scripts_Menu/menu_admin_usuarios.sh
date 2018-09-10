@@ -51,8 +51,11 @@ while [ "$menu_admin_usuarios" != 0 ]
         bash add_grp.sh;;
     
     6)clear
-        bash del_grp.sh;;
+        bash add_usr_grp.sh;;
+
     7)clear
+        bash del_grp.sh;;
+    0)clear
         bash HMG_main_menu.sh;;
 esac
 done 
