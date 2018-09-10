@@ -8,7 +8,7 @@ if [ ! -d /home/$usuario/log_bk  ]; then
 	mkdir /home/$usuario/log_bk 
 fi
 
- read -n1
+read -n1
 
 rm -rf /home/$usuario/log_bk-/backup$fecha
 echo "Se esta haciendo el nuevo backup para el dia $fecha"

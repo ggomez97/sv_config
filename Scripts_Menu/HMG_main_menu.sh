@@ -40,7 +40,7 @@ read -p "Inserte numero: " Menu
 case "$Menu" in 
 
     1) clear
-       bash menu_admin_ususarios_grupos.sh;;
+       bash menu_admin_ususarios.sh;;
 
     2) clear
        bash menu_backup.sh;;

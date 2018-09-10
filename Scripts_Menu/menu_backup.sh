@@ -7,6 +7,16 @@ AZULITO=$(tput setaf 6)
 
 clear
 
+user=`whoami`
+
+if [ `id -u $user` != 0 ]
+ then
+    echo "No tienes los privilegios necesarios para utilizar esta opcion"
+    echo
+	exit 1
+fi
+
+
 while [ "$menu_backup" != 0 ]
 do
 echo
