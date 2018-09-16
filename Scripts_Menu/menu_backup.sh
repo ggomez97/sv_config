@@ -9,7 +9,7 @@ clear
 
 user=`whoami`
 
-if [ `id -g $user` != 10 ]
+if [ `id -g $user` != 10 OR 0 ]
  then
     echo "No tienes los privilegios necesarios para utilizar esta opcion"
     echo
