@@ -27,6 +27,8 @@ cp /var/log/secure /home/$usuario/log_bk/backup$fecha/sistema
 
 cp /var/log/messages /home/$usuario/log_bk/backup$fecha/sistema
 
+#cp /opt/informix/backup /home/$usuario/log_bk/backup$fecha/sistema
+
 cd /home/$usuario/log_bk
 
 tar -cvjf backup$fecha.tar backup$fecha

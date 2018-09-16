@@ -8,7 +8,7 @@ AZULITO=$(tput setaf 6)
 clear
 user=`whoami`
 
-if [ `id -u $user` != 0 ]
+if [ `id -g $user` != 10 ]
  then
     echo "No tienes los privilegios necesarios para utilizar esta opcion"
     echo

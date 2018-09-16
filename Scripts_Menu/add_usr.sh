@@ -17,17 +17,17 @@ do
         then
             case $tipo in
                 1)clear
-                    useradd -g docente $username -s /bin/false;;
+                    sudo useradd -g docente $username -s /bin/false;;
 
                 2)clear 
-                    useradd -g gestion $username -s /bin/false;;
+                    sudo useradd -g gestion $username -s /bin/false;;
 
                 3)clear 
-                    useradd -g administrador -m $username 
+                   sudo useradd -g wheel -m $username 
                     read -n1
-                    usermod -aG wheel $username
-                    chown -R $username /home/$username
-                    chmod 770 /home/$username;;
+                   sudo usermod -aG administrador $username
+                   sudo chown -R $username /home/$username
+                   sudo chmod 770 /home/$username;;
                 0)clear
                     exit;;
             

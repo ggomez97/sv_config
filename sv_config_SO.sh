@@ -17,10 +17,10 @@ systemctl restart network.service #Reinicia el servicio NetworkManager
 
 hostnamectl  #Nos muestra que de verdad se hallan realizado los cambios
 
-cat login_defs.txt > /etc/login_defs
+cat login_defs.txt > /etc/login.defs
 
-sudo echo '30 00 * * * sh /home/gservidor/scripts/backup.sh' >> /etc/crontab
-sudo echo '00 02 * * * sh /home/gservidor/scripts/old_bk.sh' >> /etc/crontab
+sudo echo '30 00 * * * root bash /home/gservidor/HMG_scripts/backup.sh' >> /etc/crontab
+sudo echo '00 02 * * * root bash /home/gservidor/HMG_scripts/old_bk.sh' >> /etc/crontab
 sudo echo '59 00,13 * * 2,3,4,5,6,7 informix ontape -s -L 1 &' >> /etc/crontab
 sudo echo '00 00 * * 1 informix ontape-s -L 0 &' >> /etc/crontab
 sudo echo '00 00,12 * * * root clamscan --infected --recursive /' >> /etc/crontab
@@ -38,16 +38,14 @@ sudo groupadd docente
 sudo useradd -g docente -d /dev/null gabriel.gomez
 sudo passwd gabriel.gomez 
 usermod -s /bin/false gabriel.gomez
-sudo useradd -g docente -d /dev/null ricardo.perez
-sudo passwd ricardo.perez
-usermod -s /bin/false ricardo.perez 
+ 
 sudo groupadd gestion 
-sudo useradd -g gestion -d /dev/null pepe.churro
+sudo useradd -g gestion -m pepe.churro
 usermod -s /bin/false pepe.churro
 
 sudo groupadd administrador 
-sudo usseradd -g administrador -d /home/admin.server adminserver
-sudo passwd adminserver 
-sudo usermod -aG wheel adminserver
-sudo chown -R adminserver /home/admin.server
+sudo usseradd -g wheel -m admin.server
+sudo passwd admin.server 
+sudo usermod -aG administrador admin.server
+sudo chown -R admin.server /home/admin.server
 sudo chmod 770 /home/admin.server 

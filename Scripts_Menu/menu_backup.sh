@@ -9,7 +9,7 @@ clear
 
 user=`whoami`
 
-if [ `id -u $user` != 0 ]
+if [ `id -g $user` != 10 ]
  then
     echo "No tienes los privilegios necesarios para utilizar esta opcion"
     echo
@@ -24,16 +24,16 @@ echo "##############################################"
 echo "# ${RED}Menu de administracion de la Base de Datos${NORMAL}#"
 echo "##############################################"
 echo "
- 1) Ingresar en la base de datos
- 2) Realizar Backup.
- 3) Realizar recuperacion de Datos. 
+ 1) Ingresar en la base de datos.
+ 2) Realizar Backup LVL 0.
+ 3) Borrar backup obsoleto. 
  4) Ver recursos de la Base de datos.       
  0) Volver atras."
 echo
 read -p " Seleccione la opcion deseada: "   menu_backup
 case $menu_backup in
     1) clear
-        dbaccess proyecto_x;;
+        dbaccess gestion_utu;;
     2) clear
         bash backup.sh;;
     3) clear
