@@ -10,9 +10,9 @@ echo
     
   fi
   if [ "$delete_home" = "Y" ]; then
-      userdel -r $username
+      sudo userdel -r $username
   else
-      userdel $username
+      sudo userdel $username
   fi
 echo
 bash menu_admin_usuarios.sh

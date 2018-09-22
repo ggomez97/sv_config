@@ -1,5 +1,6 @@
 #!/bin/bash
+clear
 echo
-read group -p "Nombre del grupo a crear: "
+read  -p "Nombre del grupo a crear: " group
    sudo groupadd $group
 bash menu_admin_usuarios.sh

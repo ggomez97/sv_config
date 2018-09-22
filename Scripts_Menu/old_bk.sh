@@ -8,5 +8,5 @@ if [ -e /home/gservidor/log_bk/backup$FECHA.tar];then
 
 echo "Borrando el archivo que se encuentra en /home/gservidor/log_bk/backup$FECHA.tar"
 	read -n1
-	rm -rf /home/gservidor/log_bk/backup$FECHA.tar
+	sudo rm -rf /home/gservidor/log_bk/backup$FECHA.tar
 fi
